@@ -1,0 +1,33 @@
+# for this application
+ship_mmg/
+*.png
+*.csv
+
+# for Python
+*.pyc
+*.pyo
+.DS_Store
+.Python
+pip.conf
+pip.ini
+
+# for Unix Flask
+bin/
+include/
+lib/
+pip-selfcheck.json
+local/
+
+# for Windows
+Scripts/
+tcl/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# for PyChart
+.idea
+
+# for Jupyter
+.ipynb_checkpoints/

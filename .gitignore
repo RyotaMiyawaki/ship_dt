@@ -2,6 +2,9 @@
 ship_mmg/
 *.png
 *.csv
+*.sqlite3
+*.sqlite
+*.kml
 
 # for Python
 *.pyc

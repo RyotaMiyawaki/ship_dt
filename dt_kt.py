@@ -50,7 +50,7 @@ def draw_multiple_trajectory(p_list, p_label_list, save_file_name):
     複数の軌跡図をpyplotで出力する
     :param p_list : 複数の操縦性シミュレーションの結果のxy座標情報のリスト情報
     :param p_label_list : p_listに対応してグラフの凡例につける名前のリスト(p_listと長さは同じ)
-    :param save_file_name : 軌跡図の保存path
+    :param save_file_name : 軌跡図の保存path(空白('')の場合,画像の表示)
     """
     for num in range(len(p_list)):
         plt.plot(p_list[num][0], p_list[num][1], label=p_label_list[num])
@@ -94,22 +94,22 @@ if __name__ == '__main__':
     # 4-2. 各種値の時系列変化 (rad -> degreeに変更しているところもある)
     value_list = [
         # csv["RudderAngle"],
-        # csv["HDG_degree"],
-        # csv["u"],
+        csv["HDG_degree"],
+        csv["u"],
         csv["r_degree"],
         # X.T[0] * 180 / np.pi,
-        # X.T[3] * 180 / np.pi,
-        # X.T[4],
+        X.T[3] * 180 / np.pi,
+        X.T[4],
         X.T[5] * 180 / np.pi
     ]
     label_list = [
         # "delta(real)",
-        # "psi(real) [degree]",
-        # "u(real)",
+        "psi(real) [degree]",
+        "u(real)",
         "r(real) [degree/s]",
         # "delta(virtual)",
-        # "psi(virtual) [degree]",
-        # "u(virtual)",
+        "psi(virtual) [degree]",
+        "u(virtual)",
         "r(virtual) [degree/s]"
     ]
-    draw_parameter_graph_for_multiple_results(time, value_list, label_list, 'parameter.png')
+    draw_parameter_graph_for_multiple_results(time, value_list, label_list, 'result_info_list.png')
